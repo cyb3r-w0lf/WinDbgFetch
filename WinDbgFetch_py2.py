@@ -84,7 +84,7 @@ def get_bundle_uri():
 
 def get_architecture():
     """Get the current system architecture"""
-    arch = platform.machine().lower()
+    arch = os.environ['PROCESSOR_ARCHITECTURE'].lower() #platform.machine().lower()
     if arch in ['amd64', 'x86_64']:
         return 'x64'
     elif arch in ['i386', 'i686', 'x86']:
@@ -468,3 +468,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
